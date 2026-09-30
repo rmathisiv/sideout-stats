@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>U.S. Military Academy — #119 · Sideout Stats</title>
 <meta name="description" content="U.S. Military Academy volleyball rating, stats, and schedule.">
-<meta name="theme-color" content="#0a0e15">
+<meta name="theme-color" content="#eae4d0">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:title" content="U.S. Military Academy — #119 · Sideout Stats">
 <meta property="og:description" content="U.S. Military Academy volleyball rating, stats, and schedule.">
+<script>
+/* Set theme before first paint: stored choice, else OS preference. */
+try{var _t=localStorage.getItem('sideout-theme');
+if(!_t){_t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}
+document.documentElement.setAttribute('data-theme',_t);}catch(e){}
+</script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,6 +22,7 @@
 <a class="brand" href="index.html"><span class="bolt">◤</span> Sideout Stats</a>
 
 <nav><a href="index.html">Top 25</a><a href="rankings.html">Rankings</a><a href="scores.html">Scores</a><a href="players.html">Players</a><a href="leaders.html">Stats Leaders</a><a href="conferences.html">Conferences</a><a href="matchup.html">Matchup Tool</a></nav>
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Light / dark mode">🌙</button>
 </div></div>
 <div class="team-hero" style="--teamc:#010101"><div class="wrap">
 <a class="crumb" href="index.html">← Top 25</a>
@@ -44,7 +51,7 @@
 <line x1="44" y1="174.0" x2="708" y2="174.0" class="grid"/><text x="38" y="178.0" class="axis" text-anchor="end">1390</text><line x1="44" y1="93.0" x2="708" y2="93.0" class="grid"/><text x="38" y="97.0" class="axis" text-anchor="end">1527</text><line x1="44" y1="12.0" x2="708" y2="12.0" class="grid"/><text x="38" y="16.0" class="axis" text-anchor="end">1663</text>
 <polygon points="44,174 44.0,147.0 99.3,128.1 154.7,115.7 210.0,84.0 265.3,61.4 320.7,43.3 376.0,86.0 431.3,39.0 486.7,45.1 542.0,45.8 597.3,94.5 652.7,65.3 708.0,58.1 708,174" fill="url(#tg)"/>
 <polyline points="44.0,147.0 99.3,128.1 154.7,115.7 210.0,84.0 265.3,61.4 320.7,43.3 376.0,86.0 431.3,39.0 486.7,45.1 542.0,45.8 597.3,94.5 652.7,65.3 708.0,58.1" fill="none" stroke="#010101" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
-<circle cx="708.0" cy="58.1" r="5" fill="#010101" stroke="#0a0e15" stroke-width="2"/>
+<circle cx="708.0" cy="58.1" r="5" fill="#010101" style="stroke:var(--bg)" stroke-width="2"/>
 <text x="44" y="194" class="axis">Aug 28</text>
 <text x="708" y="194" class="axis" text-anchor="end">Sep 27</text>
 </svg></div>
@@ -316,50 +323,73 @@
 
 <h2 style="margin-top:28px">Schedule &amp; results</h2>
 <p class="sub">2026 season.</p>
-<table class='sched'><thead><tr><th>Date</th><th></th><th>Opponent</th><th>Res</th><th>Score</th></tr></thead><tbody><tr><td class="num">Sep 27</td>
-<td>at</td><td><a class="opp" href="team-45915.html">Holy Cross</a></td>
+<div class='table-wrap'><table class='sched'><thead><tr><th>Date</th><th></th><th>Opponent</th><th>Res</th><th>Score</th></tr></thead><tbody><tr><td class="num">Oct 17</td>
+<td>at</td><td><a class="opp" href="team-46372.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/2426.png" width="20" height="20" loading="lazy" alt="" onerror="this.style.display='none'">Navy</a></td>
+<td>—</td><td class="score">—</td></tr><tr><td class="num">Oct 10</td>
+<td>vs</td><td><a class="opp" href="team-46316.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/2329.png" width="20" height="20" loading="lazy" alt="" onerror="this.style.display='none'">Lehigh</a></td>
+<td>—</td><td class="score">—</td></tr><tr><td class="num">Oct 9</td>
+<td>vs</td><td><a class="opp" href="team-46372.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/2426.png" width="20" height="20" loading="lazy" alt="" onerror="this.style.display='none'">Navy</a></td>
+<td>—</td><td class="score">—</td></tr><tr><td class="num">Oct 3</td>
+<td>vs</td><td><a class="opp" href="team-46193.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/322.png" width="20" height="20" loading="lazy" alt="" onerror="this.style.display='none'">Lafayette</a></td>
+<td>—</td><td class="score">—</td></tr><tr><td class="num">Oct 2</td>
+<td>at</td><td><a class="opp" href="team-45948.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/2083.png" width="20" height="20" loading="lazy" alt="" onerror="this.style.display='none'">Bucknell</a></td>
+<td>—</td><td class="score">—</td></tr><tr><td class="num">Sep 27</td>
+<td>at</td><td><a class="opp" href="team-45915.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/107.png" width="20" height="20" loading="lazy" alt="" onerror="this.style.display='none'">Holy Cross</a></td>
 <td class="res-w">W</td>
 <td class="score num">3–1<span class="setline">25-27, 25-17, 25-22, 25-22</span></td></tr><tr><td class="num">Sep 25</td>
-<td>vs</td><td><a class="opp" href="team-46043.html">Colgate</a></td>
+<td>vs</td><td><a class="opp" href="team-46043.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/2142.png" width="20" height="20" loading="lazy" alt="" onerror="this.style.display='none'">Colgate</a></td>
 <td class="res-w">W</td>
 <td class="score num">3–0<span class="setline">26-24, 30-28, 25-18</span></td></tr><tr><td class="num">Sep 19</td>
-<td>vs</td><td><a class="opp" href="team-46071.html">American</a></td>
+<td>vs</td><td><a class="opp" href="team-46071.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/44.png" width="20" height="20" loading="lazy" alt="" onerror="this.style.display='none'">American</a></td>
 <td class="res-l">L</td>
 <td class="score num">0–3<span class="setline">17-25, 15-25, 23-25</span></td></tr><tr><td class="num">Sep 18</td>
-<td>vs</td><td><a class="opp" href="team-46062.html">Loyola Maryland</a></td>
+<td>vs</td><td><a class="opp" href="team-46062.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/2352.png" width="20" height="20" loading="lazy" alt="" onerror="this.style.display='none'">Loyola Maryland</a></td>
 <td class="res-w">W</td>
 <td class="score num">3–1<span class="setline">25-22, 23-25, 25-13, 25-23</span></td></tr><tr><td class="num">Sep 12</td>
-<td>at</td><td><a class="opp" href="team-45914.html">Hofstra</a></td>
+<td>at</td><td><a class="opp" href="team-45914.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/2275.png" width="20" height="20" loading="lazy" alt="" onerror="this.style.display='none'">Hofstra</a></td>
 <td class="res-l">L</td>
 <td class="score num">2–3<span class="setline">25-18, 25-23, 23-25, 18-25, 11-15</span></td></tr><tr><td class="num">Sep 11</td>
-<td>at</td><td><a class="opp" href="team-45925.html">Liberty</a></td>
+<td>at</td><td><a class="opp" href="team-45925.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/2335.png" width="20" height="20" loading="lazy" alt="" onerror="this.style.display='none'">Liberty</a></td>
 <td class="res-w">W</td>
 <td class="score num">3–0<span class="setline">25-19, 25-13, 25-17</span></td></tr><tr><td class="num">Sep 11</td>
-<td>vs</td><td><a class="opp" href="team-46300.html">Fairfield</a></td>
+<td>vs</td><td><a class="opp" href="team-46300.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/2217.png" width="20" height="20" loading="lazy" alt="" onerror="this.style.display='none'">Fairfield</a></td>
 <td class="res-l">L</td>
 <td class="score num">0–3<span class="setline">25-27, 22-25, 12-25</span></td></tr><tr><td class="num">Sep 5</td>
-<td>at</td><td><a class="opp" href="team-45873.html">UT Arlington</a></td>
+<td>at</td><td><a class="opp" href="team-45873.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/250.png" width="20" height="20" loading="lazy" alt="" onerror="this.style.display='none'">UT Arlington</a></td>
 <td class="res-w">W</td>
 <td class="score num">3–0<span class="setline">25-21, 25-20, 26-24</span></td></tr><tr><td class="num">Sep 4</td>
-<td>at</td><td><a class="opp" href="team-46558.html">Kent St.</a></td>
+<td>at</td><td><a class="opp" href="team-46558.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/2309.png" width="20" height="20" loading="lazy" alt="" onerror="this.style.display='none'">Kent St.</a></td>
 <td class="res-w">W</td>
 <td class="score num">3–0<span class="setline">25-12, 25-20, 25-17</span></td></tr><tr><td class="num">Sep 4</td>
-<td>at</td><td><a class="opp" href="team-45863.html">Sam Houston</a></td>
+<td>at</td><td><a class="opp" href="team-45863.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/2534.png" width="20" height="20" loading="lazy" alt="" onerror="this.style.display='none'">Sam Houston</a></td>
 <td class="res-w">W</td>
 <td class="score num">3–0<span class="setline">25-21, 25-21, 26-24</span></td></tr><tr><td class="num">Aug 30</td>
-<td>vs</td><td><a class="opp" href="team-46569.html">UAlbany</a></td>
+<td>vs</td><td><a class="opp" href="team-46569.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/399.png" width="20" height="20" loading="lazy" alt="" onerror="this.style.display='none'">UAlbany</a></td>
 <td class="res-w">W</td>
 <td class="score num">3–2<span class="setline">21-25, 25-19, 22-25, 25-14, 15-10</span></td></tr><tr><td class="num">Aug 29</td>
-<td>vs</td><td><a class="opp" href="team-46737.html">Sacred Heart</a></td>
+<td>vs</td><td><a class="opp" href="team-46737.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/2529.png" width="20" height="20" loading="lazy" alt="" onerror="this.style.display='none'">Sacred Heart</a></td>
 <td class="res-w">W</td>
 <td class="score num">3–1<span class="setline">23-25, 25-18, 25-23, 25-14</span></td></tr><tr><td class="num">Aug 28</td>
-<td>vs</td><td><a class="opp" href="team-46553.html">Iowa</a></td>
+<td>vs</td><td><a class="opp" href="team-46553.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/2294.png" width="20" height="20" loading="lazy" alt="" onerror="this.style.display='none'">Iowa</a></td>
 <td class="res-l">L</td>
-<td class="score num">0–3<span class="setline">23-25, 15-25, 17-25</span></td></tr></tbody></table>
+<td class="score num">0–3<span class="setline">23-25, 15-25, 17-25</span></td></tr></tbody></table></div>
 </div></div>
 <footer><div class="wrap">
 <span><b>Sideout Stats</b> · The KenPom of volleyball</span>
 <span>Data: ratings/output/ratings.json · Generated 2026-09-30T09:40:08</span>
 </div></footer>
+<script>
+/* Light/dark toggle: persists to localStorage, syncs icon + theme-color meta. */
+(function(){var b=document.getElementById('theme-toggle');
+var m=document.querySelector('meta[name="theme-color"]');
+function paint(t){document.documentElement.setAttribute('data-theme',t);
+try{localStorage.setItem('sideout-theme',t);}catch(e){}
+if(m){m.setAttribute('content',t==='dark'?'#1f2320':'#eae4d0');}
+if(b){b.textContent=(t==='dark')?'☀':'🌙';
+b.setAttribute('aria-label',(t==='dark')?'Switch to light mode':'Switch to dark mode');}}
+if(b){paint(document.documentElement.getAttribute('data-theme')||'light');
+b.addEventListener('click',function(){
+paint(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');});}})();
+</script>
 </body>
 </html>
