@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Full Rankings — 1–394 · Sideout Stats</title>
 <meta name="description" content="The KenPom of volleyball: every D1 team ranked.">
-<meta name="theme-color" content="#0a0e15">
+<meta name="theme-color" content="#eae4d0">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:title" content="Full Rankings — 1–394 · Sideout Stats">
 <meta property="og:description" content="The KenPom of volleyball: every D1 team ranked.">
+<script>
+/* Set theme before first paint: stored choice, else OS preference. */
+try{var _t=localStorage.getItem('sideout-theme');
+if(!_t){_t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}
+document.documentElement.setAttribute('data-theme',_t);}catch(e){}
+</script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,11 +22,12 @@
 <a class="brand" href="index.html"><span class="bolt">◤</span> Sideout Stats</a>
 
 <nav><a href="index.html">Top 25</a><a href="rankings.html" class="active">Rankings</a><a href="scores.html">Scores</a><a href="players.html">Players</a><a href="leaders.html">Stats Leaders</a><a href="conferences.html">Conferences</a><a href="matchup.html">Matchup Tool</a></nav>
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Light / dark mode">🌙</button>
 </div></div>
 <div class="wrap"><div class="section">
 <h2 style="font-size:1.8rem">Full Rankings</h2>
 <p class="sub">All 394 rated teams, 2026 season. Click a column header to sort.</p>
-<table class="sched"><thead><tr><th class="sortable" data-col="0" data-num="1">#<span class="arrow"></span></th><th class="sortable" data-col="1" data-num="0">Team<span class="arrow"></span></th><th class="sortable" data-col="2" data-num="0">Conf<span class="arrow"></span></th><th class="sortable" data-col="3" data-num="1">W–L<span class="arrow"></span></th><th class="sortable" data-col="4" data-num="1">Rating<span class="arrow"></span></th><th class="sortable" data-col="5" data-num="1">Sets ±<span class="arrow"></span></th><th>Streak</th></tr></thead><tbody><tr>
+<div class="table-wrap"><table class="sched"><thead><tr><th class="sortable" data-col="0" data-num="1">#<span class="arrow"></span></th><th class="sortable" data-col="1" data-num="0">Team<span class="arrow"></span></th><th class="sortable" data-col="2" data-num="0">Conf<span class="arrow"></span></th><th class="sortable" data-col="3" data-num="1">W–L<span class="arrow"></span></th><th class="sortable" data-col="4" data-num="1">Rating<span class="arrow"></span></th><th class="sortable" data-col="5" data-num="1">Sets ±<span class="arrow"></span></th><th>Streak</th></tr></thead><tbody><tr>
 <td class="num" data-v="1">1</td>
 <td><a class="opp" href="team-46474.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/158.png" width="22" height="22" loading="lazy" alt="" onerror="this.style.display='none'">Nebraska</a></td>
 <td>Big Ten</td>
@@ -2640,7 +2647,7 @@
 <td class="num" data-v="-19">15–34</td>
 <td class="num">L5</td></tr><tr>
 <td class="num" data-v="375">375</td>
-<td><a class="opp" href="team-46039.html">Central Conn. St.</a></td>
+<td><a class="opp" href="team-46039.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/2115.png" width="22" height="22" loading="lazy" alt="" onerror="this.style.display='none'">Central Conn. St.</a></td>
 <td>NEC</td>
 <td class="num" data-v="0.1538">2–11</td>
 <td class="num" data-v="1164.4" style="font-weight:800">1164</td>
@@ -2778,7 +2785,7 @@
 <td class="num" data-v="0.0000">0–12</td>
 <td class="num" data-v="953.0" style="font-weight:800">953</td>
 <td class="num" data-v="-36">0–36</td>
-<td class="num">L12</td></tr></tbody></table>
+<td class="num">L12</td></tr></tbody></table></div>
 </div></div>
 <script>
 document.querySelectorAll('th.sortable').forEach(function(th){
@@ -2806,5 +2813,18 @@ document.querySelectorAll('th.sortable').forEach(function(th){
 <span><b>Sideout Stats</b> · The KenPom of volleyball</span>
 <span>Data: ratings/output/ratings.json · Generated 2026-09-30T09:40:08</span>
 </div></footer>
+<script>
+/* Light/dark toggle: persists to localStorage, syncs icon + theme-color meta. */
+(function(){var b=document.getElementById('theme-toggle');
+var m=document.querySelector('meta[name="theme-color"]');
+function paint(t){document.documentElement.setAttribute('data-theme',t);
+try{localStorage.setItem('sideout-theme',t);}catch(e){}
+if(m){m.setAttribute('content',t==='dark'?'#1f2320':'#eae4d0');}
+if(b){b.textContent=(t==='dark')?'☀':'🌙';
+b.setAttribute('aria-label',(t==='dark')?'Switch to light mode':'Switch to dark mode');}}
+if(b){paint(document.documentElement.getAttribute('data-theme')||'light');
+b.addEventListener('click',function(){
+paint(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');});}})();
+</script>
 </body>
 </html>

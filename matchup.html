@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Matchup Tool · Sideout Stats</title>
 <meta name="description" content="Pick any two teams — our model prices the match.">
-<meta name="theme-color" content="#0a0e15">
+<meta name="theme-color" content="#eae4d0">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:title" content="Matchup Tool · Sideout Stats">
 <meta property="og:description" content="Pick any two teams — our model prices the match.">
+<script>
+/* Set theme before first paint: stored choice, else OS preference. */
+try{var _t=localStorage.getItem('sideout-theme');
+if(!_t){_t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}
+document.documentElement.setAttribute('data-theme',_t);}catch(e){}
+</script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,6 +22,7 @@
 <a class="brand" href="index.html"><span class="bolt">◤</span> Sideout Stats</a>
 
 <nav><a href="index.html">Top 25</a><a href="rankings.html">Rankings</a><a href="scores.html">Scores</a><a href="players.html">Players</a><a href="leaders.html">Stats Leaders</a><a href="conferences.html">Conferences</a><a href="matchup.html" class="active">Matchup Tool</a></nav>
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Light / dark mode">🌙</button>
 </div></div>
 <div class="wrap"><div class="section">
 <h2 style="font-size:1.8rem">Matchup Tool</h2>
@@ -417,7 +424,7 @@
 <option value="45803">#393 Mississippi Val.</option>
 <option value="46167">#394 Chicago St.</option></select></div>
 <div class="mu-vs"><button onclick="swapTeams()" title="Swap home/away"
-style="background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:10px;
+style="background:var(--surface);border:1px solid var(--line);color:var(--text);border-radius:10px;
 padding:10px 14px;font-size:1.1rem;cursor:pointer">⇄</button></div>
 <div class="mu-field"><label>AWAY TEAM</label>
 <select id="away"><option value="46474">#1 Nebraska</option>
@@ -815,7 +822,7 @@ padding:10px 14px;font-size:1.1rem;cursor:pointer">⇄</button></div>
 <option value="45803">#393 Mississippi Val.</option>
 <option value="46167">#394 Chicago St.</option></select></div>
 </div>
-<label style="display:flex;gap:8px;align-items:center;justify-content:center;margin:14px 0 0;color:var(--faint);font-size:.92rem;cursor:pointer"><input type="checkbox" id="neutral" style="width:16px;height:16px;accent-color:#f59e0b"> Neutral site (no home-court edge)</label>
+<label style="display:flex;gap:8px;align-items:center;justify-content:center;margin:14px 0 0;color:var(--faint);font-size:.92rem;cursor:pointer"><input type="checkbox" id="neutral" style="width:16px;height:16px;accent-color:var(--accent)"> Neutral site (no home-court edge)</label>
 <div class="mu-result">
 <div class="mu-score">
 <div class="side"><div class="nm" id="r-home-name">—</div><div class="sc num" id="r-home-score">–</div></div>
@@ -913,5 +920,18 @@ update();
 <span><b>Sideout Stats</b> · The KenPom of volleyball</span>
 <span>Data: ratings/output/ratings.json · Generated 2026-09-30T09:40:08</span>
 </div></footer>
+<script>
+/* Light/dark toggle: persists to localStorage, syncs icon + theme-color meta. */
+(function(){var b=document.getElementById('theme-toggle');
+var m=document.querySelector('meta[name="theme-color"]');
+function paint(t){document.documentElement.setAttribute('data-theme',t);
+try{localStorage.setItem('sideout-theme',t);}catch(e){}
+if(m){m.setAttribute('content',t==='dark'?'#1f2320':'#eae4d0');}
+if(b){b.textContent=(t==='dark')?'☀':'🌙';
+b.setAttribute('aria-label',(t==='dark')?'Switch to light mode':'Switch to dark mode');}}
+if(b){paint(document.documentElement.getAttribute('data-theme')||'light');
+b.addEventListener('click',function(){
+paint(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');});}})();
+</script>
 </body>
 </html>

@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ivy League standings · Sideout Stats</title>
 <meta name="description" content="The KenPom of volleyball: Ivy League volleyball standings.">
-<meta name="theme-color" content="#0a0e15">
+<meta name="theme-color" content="#eae4d0">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:title" content="Ivy League standings · Sideout Stats">
 <meta property="og:description" content="The KenPom of volleyball: Ivy League volleyball standings.">
+<script>
+/* Set theme before first paint: stored choice, else OS preference. */
+try{var _t=localStorage.getItem('sideout-theme');
+if(!_t){_t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}
+document.documentElement.setAttribute('data-theme',_t);}catch(e){}
+</script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,12 +22,13 @@
 <a class="brand" href="index.html"><span class="bolt">◤</span> Sideout Stats</a>
 
 <nav><a href="index.html">Top 25</a><a href="rankings.html">Rankings</a><a href="scores.html">Scores</a><a href="players.html">Players</a><a href="leaders.html">Stats Leaders</a><a href="conferences.html" class="active">Conferences</a><a href="matchup.html">Matchup Tool</a></nav>
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Light / dark mode">🌙</button>
 </div></div>
 <div class="wrap"><div class="section">
 <a class="crumb" href="conferences.html" style="color:var(--muted);font-size:.85rem;font-weight:600">← All conferences</a>
 <h2 style="font-size:1.8rem;margin-top:10px">Ivy League</h2>
 <p class="sub">8 teams, sorted by our rating · 2026 season.</p>
-<table class="sched"><thead><tr><th>#</th><th>Team</th><th>W–L</th><th>Rating</th><th>Sets</th></tr></thead>
+<div class="table-wrap"><table class="sched"><thead><tr><th>#</th><th>Team</th><th>W–L</th><th>Rating</th><th>Sets</th></tr></thead>
 <tbody><tr>
 <td class="num">51</td>
 <td><a class="opp" href="team-46307.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/108.png" width="22" height="22" loading="lazy" alt="" onerror="this.style.display='none'">Harvard</a></td>
@@ -62,11 +69,24 @@
 <td><a class="opp" href="team-46407.html"><img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/171.png" width="22" height="22" loading="lazy" alt="" onerror="this.style.display='none'">Columbia</a></td>
 <td class="num">6–4</td>
 <td class="num" style="font-weight:800;color:var(--gold)">1321</td>
-<td class="num">21–17</td></tr></tbody></table>
+<td class="num">21–17</td></tr></tbody></table></div>
 </div></div>
 <footer><div class="wrap">
 <span><b>Sideout Stats</b> · The KenPom of volleyball</span>
 <span>Data: ratings/output/ratings.json · Generated 2026-09-30T09:40:08</span>
 </div></footer>
+<script>
+/* Light/dark toggle: persists to localStorage, syncs icon + theme-color meta. */
+(function(){var b=document.getElementById('theme-toggle');
+var m=document.querySelector('meta[name="theme-color"]');
+function paint(t){document.documentElement.setAttribute('data-theme',t);
+try{localStorage.setItem('sideout-theme',t);}catch(e){}
+if(m){m.setAttribute('content',t==='dark'?'#1f2320':'#eae4d0');}
+if(b){b.textContent=(t==='dark')?'☀':'🌙';
+b.setAttribute('aria-label',(t==='dark')?'Switch to light mode':'Switch to dark mode');}}
+if(b){paint(document.documentElement.getAttribute('data-theme')||'light');
+b.addEventListener('click',function(){
+paint(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');});}})();
+</script>
 </body>
 </html>
