@@ -313,3 +313,145 @@ header.top{box-shadow:0 2px 10px rgba(38,48,58,.07)}
 [data-theme="dark"] header.top{box-shadow:0 8px 22px rgba(0,0,0,.38)}
 [data-theme="dark"] .rank-col header,[data-theme="dark"] .lead-card header{
   background:linear-gradient(180deg,rgba(255,255,255,.03),transparent)}
+
+/* shared feature-build visuals */
+.donut-top{font-size:22px;font-weight:800;fill:var(--text);font-variant-numeric:tabular-nums}
+.donut-bot{font-size:11px;font-weight:700;fill:var(--muted);letter-spacing:1px;text-transform:uppercase}
+.hbar{display:inline-block;height:9px;border-radius:999px;background:var(--surface2);
+  position:relative;vertical-align:middle;overflow:visible}
+.hbar-fill{display:block;height:100%;border-radius:999px;min-width:3px}
+.mv{font-size:.78rem;font-weight:800;white-space:nowrap;font-variant-numeric:tabular-nums}
+.mv-up{color:var(--green)}.mv-dn{color:var(--red)}.mv-na{color:var(--faint)}
+.pctrow{display:flex;align-items:center;gap:10px;padding:5px 0;font-size:.86rem}
+.pctlab{width:118px;color:var(--muted);font-weight:600;flex:none}
+.pctbar{flex:1}
+.pctval{width:64px;text-align:right;font-weight:800}
+.pctn{width:44px;text-align:right;color:var(--faint);font-size:.78rem}
+.duelrow{display:flex;align-items:center;gap:10px;padding:6px 0}
+.duelab{width:110px;color:var(--muted);font-weight:600;font-size:.82rem;flex:none}
+.duelbars{flex:1;display:flex;flex-direction:column;gap:5px}
+.duelbar{width:100%}
+.duel-avg{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--gold);border-radius:1px}
+.duelval{font-size:.8rem;font-weight:800;min-width:52px}
+.duelrow .hbar{position:relative}
+.chart-empty{color:var(--faint);font-size:.85rem;padding:18px 0;text-align:center}
+.feat-grid{display:grid;gap:14px}
+@media(min-width:760px){.feat-2{grid-template-columns:1fr 1fr}.feat-3{grid-template-columns:1fr 1fr 1fr}}
+.feat-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.feat-card h3{margin:0 0 4px;font-size:1.02rem}
+.feat-card .deck{color:var(--muted);font-size:.84rem;margin:0 0 10px}
+
+/* match of the day */
+.motd{background:var(--surface);border:1px solid var(--line);border-radius:12px;
+  padding:16px 18px;display:grid;gap:12px;grid-template-columns:1fr auto;
+  align-items:center}
+@media(min-width:760px){.motd{grid-template-columns:1fr 150px}}
+.motd-eyebrow{font-size:.72rem;font-weight:800;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.motd-eyebrow span{color:var(--muted);letter-spacing:.5px}
+.motd-team{display:flex;align-items:center;gap:8px;font-weight:800;font-size:1.05rem;
+  color:var(--text);text-decoration:none;padding:4px 0}
+.motd-team:hover{color:var(--accent)}
+.motd-rank{color:var(--faint);font-weight:800;min-width:38px}
+.motd-rec{color:var(--muted);font-weight:600;font-size:.82rem}
+.motd-at{color:var(--faint);font-size:.78rem;font-weight:700;padding:0 0 0 46px}
+.motd-why{margin:8px 0 4px;color:var(--muted);font-size:.86rem}
+.motd-why b{color:var(--text)}
+.motd-meta{color:var(--faint);font-size:.8rem;display:flex;gap:10px;flex-wrap:wrap;
+  align-items:center}
+.motd-meta .pred{color:var(--muted);font-weight:700}
+.motd-donut{display:flex;justify-content:center}
+
+/* upset watch */
+.uw-day{white-space:nowrap;color:var(--muted);font-size:.8rem;font-weight:700}
+.uw-dog{display:inline-block;margin-right:8px;font-size:.82rem;color:var(--muted);
+  font-weight:600}
+.uw-dog b{color:var(--gold)}
+
+/* biggest movers */
+.bm-cols{display:grid;gap:14px}
+@media(min-width:760px){.bm-cols{grid-template-columns:1fr 1fr}}
+.bm-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.bm-head h3{margin:0;font-size:1.02rem}
+.bm-head small{color:var(--faint);font-size:.76rem;font-weight:600}
+.bm-row{display:flex;align-items:center;gap:9px;padding:6px 0;color:var(--text);
+  text-decoration:none;font-weight:700;font-size:.9rem;border-top:1px solid var(--line)}
+.bm-row:first-of-type{border-top:0}
+.bm-row:hover{color:var(--accent)}
+.bm-rank{color:var(--faint);font-weight:800;min-width:34px}
+.bm-was{margin-left:auto;color:var(--faint);font-size:.78rem;font-weight:600;
+  font-variant-numeric:tabular-nums}
+
+/* rankconf feature additions */
+.rc-rate{white-space:nowrap}
+.rc-rate .hbar{margin-left:6px}
+.rc-strength{display:flex;flex-direction:column;gap:5px;margin:10px 0 2px}
+.rc-srow{display:flex;align-items:center;gap:10px;font-size:.86rem;min-height:26px}
+.rc-srank{width:28px;flex:none;text-align:right;color:var(--muted);font-weight:700;
+  font-variant-numeric:tabular-nums}
+.rc-sname{width:172px;flex:none;min-width:0}
+.rc-sname .opp{display:flex;align-items:center;gap:8px;font-weight:700;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rc-sbar{flex:1;min-width:60px}
+.rc-sval{width:44px;flex:none;text-align:right;font-weight:800;
+  font-variant-numeric:tabular-nums}
+@media(max-width:560px){.rc-sname{width:128px}.rc-rate .hbar{display:none}}
+
+/* feat_matchup: donut + set-score distribution + tale of the tape */
+.mu-panels{display:grid;gap:18px;align-items:center;margin:2px 0 16px}
+@media(min-width:700px){.mu-panels{grid-template-columns:168px 1fr}}
+.mu-donutwrap{display:flex;justify-content:center}
+.mu-donut-top{font-size:24px;font-weight:800;fill:var(--text);
+  font-variant-numeric:tabular-nums}
+.mu-donut-bot{font-size:11px;font-weight:700;fill:var(--muted);
+  letter-spacing:1px;text-transform:uppercase}
+.mu-sect{font-size:.8rem;font-weight:800;letter-spacing:.8px;
+  text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.mu-sect .deck{color:var(--faint);font-weight:600;letter-spacing:0;
+  text-transform:none;font-size:.78rem}
+.mu-bar{display:inline-block;height:10px;border-radius:999px;
+  background:var(--surface2);position:relative;vertical-align:middle}
+.mu-fill{display:block;height:100%;border-radius:999px;min-width:3px}
+.mu-distrow{display:flex;align-items:center;gap:10px;padding:3px 0}
+.mu-distlab{width:40px;font-weight:800;font-size:.86rem}
+.mu-distbar{flex:1}
+.mu-distval{width:52px;text-align:right;color:var(--muted);font-size:.82rem}
+.mu-tapehead{display:flex;justify-content:space-between;font-weight:800;
+  font-size:.9rem;margin:2px 0 10px}
+.mu-taperow{margin-bottom:9px}
+.mu-taperow:last-child{margin-bottom:0}
+.mu-tapelab{font-size:.76rem;font-weight:700;color:var(--muted);
+  letter-spacing:.4px}
+.mu-tapeside{display:flex;align-items:center;gap:8px;padding:2px 0}
+.mu-tval{width:58px;font-size:.84rem;font-weight:800}
+.mu-tapebar{flex:1}
+.mu-tick{position:absolute;top:-3px;bottom:-3px;width:2px;
+  background:var(--gold);border-radius:1px}
+
+/* feat_team extras: denser tiles + chart pairing. Theme vars only. */
+.feat-form{grid-template-columns:repeat(5,minmax(0,1fr))}
+.feat-form .tile .v{font-size:1.15rem}
+.feat-form .tile{padding:9px 12px}
+.team-charts{align-items:start}
+.offdef .feat-card{padding:12px 14px}
+.offdef .pctrow{padding:4px 0}
+@media(max-width:759px){.feat-form{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* feat_leaders: per-row relative bars on leaders cards + how-it-works page */
+.lead-row.lead-bar{grid-template-columns:28px 1fr auto auto}
+.lead-hbar{line-height:0}
+.lead-hbar .hbar{background:var(--surface2)}
+.how-card{background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);padding:14px 16px;margin:0 0 12px}
+.how-card h3{margin:0 0 6px;font-size:1rem}
+.how-card p{margin:0 0 8px;font-size:.88rem;color:var(--text);line-height:1.5}
+.how-card p:last-child{margin-bottom:0}
+.how-card .dim{color:var(--muted);font-size:.82rem}
+.how-formula{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:.82rem;background:var(--surface2);border:1px solid var(--line);
+  border-radius:8px;padding:8px 12px;margin:8px 0;display:inline-block}
+.how-stat{display:inline-block;background:var(--surface2);
+  border:1px solid var(--line);border-radius:8px;padding:4px 10px;
+  font-weight:800;font-size:.85rem;margin:2px 6px 2px 0}
+.how-grid{display:grid;gap:12px}
+@media(min-width:760px){.how-grid{grid-template-columns:1fr 1fr}}

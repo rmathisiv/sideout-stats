@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How it works · Sideout Stats</title>
+<meta name="description" content="The KenPom of volleyball: how the ratings and win probabilities are built and tested.">
+<meta name="theme-color" content="#eae4d0">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="How it works · Sideout Stats">
+<meta property="og:description" content="The KenPom of volleyball: how the ratings and win probabilities are built and tested.">
+<script>
+/* Set theme before first paint: stored choice, else OS preference. */
+try{var _t=localStorage.getItem('sideout-theme');
+if(!_t){_t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}
+document.documentElement.setAttribute('data-theme',_t);}catch(e){}
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="nav"><div class="wrap">
+<a class="brand" href="index.html"><span class="bolt">◤</span> Sideout Stats</a>
+
+<nav><a href="index.html">Top 25</a><a href="rankings.html">Rankings</a><a href="scores.html">Scores</a><a href="players.html">Players</a><a href="leaders.html">Stats Leaders</a><a href="conferences.html">Conferences</a><a href="matchup.html">Matchup Tool</a><a href="how.html" class="active">How it works</a></nav>
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Light / dark mode">🌙</button>
+</div></div>
+<div class="wrap"><div class="section">
+<h2 class="page-title">How it works</h2>
+<p class="sub">Ratings, win probabilities, and how we check our work — for the 2026 season.</p>
+<div class="how-grid"><div class="how-card">
+<h3>The rating</h3>
+<p>Every team gets a single number, Sideout Rating, on an Elo-style scale.
+Every team starts each season at 1500; teams carried over from last year keep
+half of their previous rating. Beating a strong opponent moves the number up
+more than beating a weak one, and the size of the move also reflects how many
+sets the winner dropped and the point margin.</p>
+<p class="dim">A ~100-point gap at a neutral site means the favorite wins about
+64% of the time. 200 points is a heavy favorite; 50 points is close to a toss-up.</p>
+</div><div class="how-card">
+<h3>Win probability</h3>
+<p>Each matchup's win chance comes straight from the two ratings and the venue:</p>
+<div class="how-formula">P = 1 / (1 + 10<sup>-(R<sub>home</sub> + 65 - R<sub>away</sub>) / 400</sup>)</div>
+<p class="dim">The +65 is the home-court edge, in rating points — roughly worth
+8 points of win probability for an even matchup. At a neutral site, or for
+tournament/championship games, the +65 drops to 0.</p>
+</div></div>
+<div class="how-card">
+<h3>Predicted set scores</h3>
+<p>The model's most likely scoreline (3-0, 3-1, 3-2, 2-3, 1-3, or 0-3) is derived
+from the same win probability. We solve for the per-set win chance that would
+produce that match probability over a best-of-5, then pick the scoreline the
+set-by-set math says is most probable.</p>
+<p class="dim">It's the single most likely score — not the only possible one.
+Upsets and five-setters happen exactly as often as the probabilities say they should.</p>
+</div><div class="how-card">
+<h3>Brier score</h3>
+<p>The Brier score measures how accurate our probabilities are, not just whether
+we picked the winner. For each game we compare our predicted win chance to what
+actually happened; perfect predictions score 0, and flipping a coin (always
+predicting 50%) scores 0.25. <b>Lower is better.</b></p>
+<p class="dim">Our backtests land around <b>0.19</b> — well better than a coin flip,
+and competitive with published ratings systems in other sports.</p>
+</div><div class="how-card">
+<h3>Backtest results</h3>
+<p>Two out-of-sample tests, re-run on 2026-09-30 over 7,420 completed games
+(5,131 in 2025, 2,289 in 2026 to date):</p>
+<p><span class="how-stat">2025 NCAA tournament · n=63</span>
+<span class="how-stat">68.3% correct</span>
+<span class="how-stat">Brier 0.191</span><br>
+<span class="dim">Trained only on the 2025 regular season, then predicted all
+63 NCAA championship games — no tournament data was used in training.</span></p>
+<p><span class="how-stat">2026 walk-forward · n=2,288</span>
+<span class="how-stat">71.6% correct</span>
+<span class="how-stat">Brier 0.187</span><br>
+<span class="dim">Each 2026 game predicted with only the games before it, then
+the result folded in — the closest simulation of live, day-by-day forecasting.</span></p>
+</div><div class="how-card">
+<h3>Data &amp; limitations</h3>
+<p>The model is trained on official box scores pulled from a public NCAA data
+API (ncaa-api.henrygd.me) — match results, sets, and per-set point totals.
+That's all it sees.</p>
+<p class="dim">What it does <b>not</b> see: injuries, lineup changes, TV/broadcast
+information, travel schedules, or anything off the court. Ratings also need a
+few matches to stabilize — early-season numbers (roughly the first month) are
+noisier, since new teams start at 1500 and returning teams keep only half of
+last year's rating. Treat September ratings as provisional.</p>
+</div>
+</div></div>
+<footer><div class="wrap">
+<span><b>Sideout Stats</b> · The KenPom of volleyball</span>
+<span>Data: ratings/output/ratings.json · Generated 2026-09-30T09:40:08</span>
+</div></footer>
+<script>
+/* Light/dark toggle: persists to localStorage, syncs icon + theme-color meta. */
+(function(){var b=document.getElementById('theme-toggle');
+var m=document.querySelector('meta[name="theme-color"]');
+function paint(t){document.documentElement.setAttribute('data-theme',t);
+try{localStorage.setItem('sideout-theme',t);}catch(e){}
+if(m){m.setAttribute('content',t==='dark'?'#1f2320':'#eae4d0');}
+if(b){b.textContent=(t==='dark')?'☀':'🌙';
+b.setAttribute('aria-label',(t==='dark')?'Switch to light mode':'Switch to dark mode');}}
+if(b){paint(document.documentElement.getAttribute('data-theme')||'light');
+b.addEventListener('click',function(){
+paint(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');});}})();
+</script>
+</body>
+</html>
