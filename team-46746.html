@@ -21,7 +21,7 @@ document.documentElement.setAttribute('data-theme',_t);}catch(e){}
 <div class="nav"><div class="wrap">
 <a class="brand" href="index.html"><span class="bolt">◤</span> Sideout Stats</a>
 
-<nav><a href="index.html">Top 25</a><a href="rankings.html">Rankings</a><a href="scores.html">Scores</a><a href="players.html">Players</a><a href="leaders.html">Stats Leaders</a><a href="conferences.html">Conferences</a><a href="matchup.html">Matchup Tool</a></nav>
+<nav><a href="index.html">Top 25</a><a href="rankings.html">Rankings</a><a href="scores.html">Scores</a><a href="players.html">Players</a><a href="leaders.html">Stats Leaders</a><a href="conferences.html">Conferences</a><a href="matchup.html">Matchup Tool</a><a href="how.html">How it works</a></nav>
 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Light / dark mode">🌙</button>
 </div></div>
 <div class="team-hero" style="--teamc:#861F41"><div class="wrap">
@@ -43,13 +43,16 @@ document.documentElement.setAttribute('data-theme',_t);}catch(e){}
 <div class="tile"><div class="v num">—</div><div class="k">SOS</div></div>
 </div>
 
-<div class="chart-card"><h3>Rating trend</h3><p>Model rating after each match date.</p>
-<div class="chart-empty">Not enough data for a trend yet.</div></div>
+<h2 style="margin-top:28px">Form</h2><p class="sub">Last-10, venue splits, and record vs current top 25, 2026 season.</p><div class="stat-tiles feat-form"><div class="tile"><div class="v num">—</div><div class="k">Last 10</div></div><div class="tile"><div class="v num">—</div><div class="k">Home</div></div><div class="tile"><div class="v num">—</div><div class="k">Away</div></div><div class="tile"><div class="v num">—</div><div class="k">Neutral</div></div><div class="tile"><div class="v num">—</div><div class="k">vs Top 25</div></div></div>
+
+<div class="feat-grid feat-2 team-charts"><div class="chart-card"><h3>Rating trend</h3><p>Model rating after each match date.</p><div class="chart-empty">Not enough data for a trend yet.</div></div><div class="feat-card"><h3>Rank trend</h3><p class="deck">Our rank after each match date (rank 1 = top).</p><div class="chart-empty">Not enough data for a rank trend yet.</div></div></div>
 
 <h2 style="margin-top:28px">Box-score stats</h2>
 <p class="sub">Per-set averages from tracked box scores, 2026 season.</p>
 <div class="stat-tiles"><div class="tile"><div class="v num">—</div><div class="k">Kills / set</div></div><div class="tile"><div class="v num">—</div><div class="k">Hitting %</div></div><div class="tile"><div class="v num">—</div><div class="k">Blocks / set</div></div><div class="tile"><div class="v num">—</div><div class="k">Digs / set</div></div><div class="tile"><div class="v num">—</div><div class="k">Aces / set</div></div></div>
 <div class="note">Box-score stats for 2026 aren’t in the database yet — the season backfill is still in progress.</div>
+
+<h2 style="margin-top:28px">Offense &amp; defense vs D1</h2><div class="note">Box-score percentiles for 2026 aren’t in the database yet — the season backfill is still in progress.</div>
 
 <h2 style="margin-top:28px">Roster</h2>
 <p class="sub">Every player, per-set averages, 2026 season. Click a column to sort; click a name for the full player page.</p>
