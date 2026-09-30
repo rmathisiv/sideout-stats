@@ -21,7 +21,7 @@ document.documentElement.setAttribute('data-theme',_t);}catch(e){}
 <div class="nav"><div class="wrap">
 <a class="brand" href="index.html"><span class="bolt">◤</span> Sideout Stats</a>
 
-<nav><a href="index.html">Top 25</a><a href="rankings.html">Rankings</a><a href="scores.html">Scores</a><a href="players.html">Players</a><a href="leaders.html">Stats Leaders</a><a href="conferences.html">Conferences</a><a href="matchup.html">Matchup Tool</a></nav>
+<nav><a href="index.html">Top 25</a><a href="rankings.html">Rankings</a><a href="scores.html">Scores</a><a href="players.html">Players</a><a href="leaders.html">Stats Leaders</a><a href="conferences.html">Conferences</a><a href="matchup.html">Matchup Tool</a><a href="how.html">How it works</a></nav>
 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Light / dark mode">🌙</button>
 </div></div>
 <div class="team-hero" style="--teamc:#002D72"><div class="wrap">
@@ -43,8 +43,9 @@ document.documentElement.setAttribute('data-theme',_t);}catch(e){}
 <div class="tile"><div class="v num">1019</div><div class="k">SOS · avg opp rating</div></div>
 </div>
 
-<div class="chart-card"><h3>Rating trend</h3><p>Model rating after each match date.</p>
-<div class="chart-empty">Not enough data for a trend yet.</div></div>
+<h2 style="margin-top:28px">Form</h2><p class="sub">Last-10, venue splits, and record vs current top 25, 2026 season.</p><div class="stat-tiles feat-form"><div class="tile"><div class="v num">1–0</div><div class="k">Last 1</div></div><div class="tile"><div class="v num">1–0</div><div class="k">Home</div></div><div class="tile"><div class="v num">0–0</div><div class="k">Away</div></div><div class="tile"><div class="v num">0–0</div><div class="k">Neutral</div></div><div class="tile"><div class="v num">0–0</div><div class="k">vs Top 25</div></div></div>
+
+<div class="feat-grid feat-2 team-charts"><div class="chart-card"><h3>Rating trend</h3><p>Model rating after each match date.</p><div class="chart-empty">Not enough data for a trend yet.</div></div><div class="feat-card"><h3>Rank trend</h3><p class="deck">Our rank after each match date (rank 1 = top).</p><div class="chart-empty">Not enough data for a rank trend yet.</div></div></div>
 
 <h2 style="margin-top:28px">Box-score stats</h2>
 <p class="sub">Per-set averages from tracked box scores, 2026 season.</p>
@@ -56,6 +57,8 @@ document.documentElement.setAttribute('data-theme',_t);}catch(e){}
 <div class="tile"><div class="v num">2.0</div><div class="k">Aces / set</div></div>
 <div class="tile"><div class="v num">1</div><div class="k">Matches tracked</div></div></div>
 
+
+<h2 style="margin-top:28px">Offense &amp; defense vs D1</h2><p class="sub">Per-set percentiles across D1 (higher = better), 2026 season.</p><div class="feat-grid feat-2 offdef"><div class="feat-card"><h3>Offense vs D1</h3><p class="deck">D1 avg 12.2 kills/set · +0.205 hitting · 1.5 aces/set · 2.1 blocks/set · 13.7 digs/set</p><div class="pctrow"><span class="pctlab">Kills / set</span><span class="hbar pctbar"><span class="hbar-fill" style="width:94%;background:var(--green)"></span></span><span class="pctval num">14.0</span><span class="pctn num">94th</span></div><div class="pctrow"><span class="pctlab">Hitting %</span><span class="hbar pctbar"><span class="hbar-fill" style="width:63%;background:var(--gold)"></span></span><span class="pctval num">+0.223</span><span class="pctn num">63th</span></div><div class="pctrow"><span class="pctlab">Aces / set</span><span class="hbar pctbar"><span class="hbar-fill" style="width:93%;background:var(--green)"></span></span><span class="pctval num">2.0</span><span class="pctn num">93th</span></div><div class="pctrow"><span class="pctlab">Blocks / set</span><span class="hbar pctbar"><span class="hbar-fill" style="width:1%;background:var(--red)"></span></span><span class="pctval num">1.0</span><span class="pctn num">1th</span></div><div class="pctrow"><span class="pctlab">Digs / set</span><span class="hbar pctbar"><span class="hbar-fill" style="width:98%;background:var(--green)"></span></span><span class="pctval num">17.0</span><span class="pctn num">98th</span></div></div><div class="feat-card"><h3>Defense vs D1</h3><p class="deck">D1 avg 12.3 opp kills/set · +0.208 opp hitting</p><div class="pctrow"><span class="pctlab">Opp kills / set</span><span class="hbar pctbar"><span class="hbar-fill" style="width:98%;background:var(--green)"></span></span><span class="pctval num">10.3</span><span class="pctn num">98th</span></div><div class="pctrow"><span class="pctlab">Opp hitting %</span><span class="hbar pctbar"><span class="hbar-fill" style="width:99%;background:var(--green)"></span></span><span class="pctval num">+0.098</span><span class="pctn num">99th</span></div></div></div>
 
 <h2 style="margin-top:28px">Roster</h2>
 <p class="sub">Every player, per-set averages, 2026 season. Click a column to sort; click a name for the full player page.</p>
